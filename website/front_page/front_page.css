@@ -1,0 +1,101 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;讓padding和border不會撐大元素*/
+}
+body{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2c2c2c;
+}
+img{
+    max-width: 100%; /*最大寬度為100%*，width:100%會強制把小的圖片也擴大*/
+    height: auto;
+}
+
+.topPage header{
+    height: 90vh;
+    background: url(../圖片/主頁背景.jpg)no-repeat center top/cover;
+    padding-top: 50px;/*讓文字不要貼到上面*/
+}
+.topPage header h1 img{
+    width: 240px;
+    border-radius: 100%;
+}
+.topPage header h1{
+    text-align: center;
+}
+.linkList{
+    padding: 20px 0;
+}
+.linkList li{
+    margin-bottom: 40px;
+    list-style-type: none; /*清除點*/
+}
+.linkList li a{
+    display: block;/*讓連結變成區塊元素，讓整個區塊都可以點擊*/
+    background-color: #f5f5f5;
+    color: #2c2c2c;
+    text-decoration: none;
+}
+.linkList li a span{
+    display: block;
+    padding: 12px 15px 10px;
+    font-weight: bold;
+}
+.linkList li a:hover{
+    filter: brightness(90%);
+}
+
+
+@media screen and (min-width: 920px){
+    .topPage{
+        display: flex;
+    }
+    .topPage header{
+        flex-basis: 38%;/* 用% 較彈性 */
+    }
+    .topPage main{
+        flex-basis: 62%;
+    }
+    .linkList{
+        display: flex;/*讓li並排*/
+        flex-wrap: wrap;/*超過寬度換行*/
+        /* padding: 50px 100px 100px 100px; */
+        max-width: 800px;
+        margin: 0 auto;
+        justify-content: space-around;/*左右對齊*/
+    }
+    .linkList li{
+        flex-basis: 47%;/*一行放兩個*/
+        margin-bottom: 20px;
+        list-style: none;/* 從清單中刪除點 */
+    }
+    .linkList::before{
+        content: '';
+        width: 47%;
+        background : url("../圖片/logo2.png") no-repeat center center/72%;
+        /* 第一個 center：代表水平位置居中。
+           第二個 center：代表垂直位置居中。 */
+        /*cover表示背景圖片會自動調整大小以完全覆蓋整個元素背景，不管圖片的原始大小如何。*/
+    }
+    .topPage main{
+        display: flex;/*讓main裡的元素並排*/
+        align-items: center;/*垂直置中*/ 
+    }
+    .topPage header {
+        height: 300vh;
+        margin-bottom: 0;
+    }
+    /*單用.main父元素會影響到其他頁面的main，所以要加上.topPage*/
+    .topPage main{
+        display: flex;
+        align-items: center;/*把彈性項目垂直，就變成上下左右置中*/
+    }
+    .topPage header{
+        height: 100vh;
+        margin-bottom: 0;
+    }
+}

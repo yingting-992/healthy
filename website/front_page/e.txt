@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../index.js"></script>
+    <link rel="stylesheet" href="./front_page.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>健康飲食</title>
+</head>
+<body>
+    <header>
+        <h1><img src="./LOGO.png" alt="" srcset=""></h1>
+        <nav>
+            <ul> 
+                <li><a href="#">首頁</a></li>
+                <li><a href="./calculate.html">計算健康</a></li>
+                <li><a href="./fat_loss.html">輕鬆減脂</a></li>
+                <li><a href="./Build_muscle.html">運動增肌</a></li>
+                <li><a href="#">關於我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    
+    <!-- 回到頂部按鈕 -->
+    <button class="floating-button" onclick="scrollToTop()">回到頂部</button>
+    <script src="../index.js"></script>
+
+    <!-- 讓用戶輸入每日卡路里的表單
+    <form id="calorieForm">   
+        <label for="calories">輸入今日卡路里攝取量:</label> 
+        <input type="number" id="calories" name="calories" required>
+        <button type="submit">提交</button>
+    </form>
+    <div id="calorieOutput"></div> --> <!-- 顯示用戶輸入的卡路里 -->
+
+    <!-- 顯示圖表 -->
+    <!-- <div id="tChart">
+        <canvas id="calorieChart"></canvas>    
+    </div>
+    <button id="clearData">Clear</button> -->
+</body>
+</html>
