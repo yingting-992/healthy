@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算健康</title>
+    <link rel="stylesheet" href="./calculate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Build_muscle/Build_muscle.js"></script>
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body  id="topPage">
+    <div class="header">
+        <div class="container">
+            <h1>健康計算</h1>
+            <span>Healthy Eating, Healthy Exercise.</span>
+            <!-- <a href="../front_page/front_page.html"><img src="../圖片/logo3.png" alt="" class="logo"></a>  加入 LOGO -->
+            <!-- <a href="javascript:void(0);" class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </a> -->
+            
+            <nav class="navbar" id="navbar">
+                <a href="../front_page/front_page.html" class="item">首頁</a>
+                <a href="../fat_loss/fat_loss.html" class="item">減脂</a>
+                <a href="../Build_muscle/Build_muscle.html" class="item">增肌</a>
+                <a href="../calculate/calculate.html" class="item">計算健康</a>
+            </nav>
+        </div>
+    </div>
+    <main > <!-- class="main-container" -->
+        <section class="form-section">
+            <div class="database">
+                <h2>基本資料</h2>
+                <form id="bmiForm">
+                    <label for="stdnumber">學號:</label>
+                    <input type="text" id="stdnumber" name="stdnumber" placeholder="請輸入學號" required >
+                    <div id="editMode" style="display: none;"></div><br> <!-- 用於顯示結果 -->
+                    <!--  -->     
+                    <label for="name">姓名:</label>
+                    <input type="text" id="name" name="name" placeholder="請輸入姓名" required><br>
+                    <!--  -->
+
+                    <label for="age" id="lab">年齡:</label>
+                    <input type="number" id="age" name="age" placeholder="請輸入年齡" required> <br>
+                    <!--  -->
+                    <label for="height" id="lab">身高 (cm):</label>
+                    <input type="number" id="height" name="height" placeholder="請輸入身高" required> <br>
+                    <!--  -->
+                    <label for="weight" id="lab">體重 (kg):</label>
+                    <input type="number" id="weight" name="weight" placeholder="請輸入體重" required> <br>
+                    <!--  -->
+                    
+                    <label for="height" id="lab">性別: </label>
+                    <label class="gender">
+                            <input type="radio" id="male" name="gender" value="male">Male
+                        <label style="margin-left: 20px;">
+                            <input type="radio" id="female" name="gender" value="female">Female
+                        </label>    
+                    </label>                    
+                </form>
+                <form id="calorieForm">   
+                    <!-- <label for="weight">輸入今日卡路里攝取量:</label>  -->
+                    <!-- <input type="number" id="weight" name="weight" > -->
+                    <button type="submit">確認</button>
+                </form>  
+                  
+            </div>
+ 
+            
+            <div id="dataoutput">
+                <h1>計算結果</h1>
+                    <h2>BMI</h2>
+                    <div id="bmiOutput"></div>
+                    <div id="bmiFeedback" class="feedback"></div>
+                    
+                    <h2>體脂率</h2>
+                    <div id="bodyFatOutput"></div>
+
+                    <h2>基礎代謝率 (BMR) </h2>
+                    <div id="bmrOutput"></div>
+            </div>
+
+            
+            <div class="tot-activity">
+                <div class="totttt">
+                    <div class="divider">
+                        <h1>每日總熱量消耗 (TDEE)</h1>
+                    </div>
+
+                    <div class="activity-mode-section">
+                        <h2>請選擇您的活動模式</h2>
+                        <div class="activity-mode">
+                            <label  class="activity-option">
+                                <input type="radio" name="mode" value="0" checked>
+                                <span>一般</span>
+                            </label>
+                            <label  class="activity-option">
+                                <input type="radio" name="mode" value="300">
+                                <span>減重</span>
+                            </label>
+                        </div>
+                            <br>
+                        <div class="activity-level-section">
+                            <h2>選擇活動程度</h2>
+                            <div class="custom-select-wrapper">
+                                <select id="activityLevel" name="activityLevel"class="custom-select">
+                                    <option value="1.2">久坐</option>
+                                    <option value="1.375">輕度活動</option>
+                                    <option value="1.55">中度活動</option>
+                                    <option value="1.725">高度活動</option>
+                                    <option value="1.9">非常高度活動</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="activityBmrOutput"></div> <br>
+                        <button type="button" id="calculateActivityBMRBtn">計算每日所需熱量</button>
+                    </div>    
+                </div>
+            </div>
+                    
+
+            <!-- 備用不刪 -->
+            <span id="Insbtn" style="display: none;">儲存</span>
+            <button id="Selbtn" style="display: none;">SELECT</button>
+            <button id="Delbtn" style="display: none;">DELETE</button>
+
+            
+            
+        </section>
+
+    
+
+
+
+        <!-- 右側圖片區域 -->
+        <!-- <aside class="image-section">
+            <img src="../圖片/健康操.jfif" alt="健康相關圖片">
+            
+        </aside> -->
+        <!-- 讓用戶輸入每日卡路里的表單 -->
+        
+
+        
+        <!-- 因體重只會跟著一個使用者所以不用了 -->
+        <!--<div id="calorieOutput"></div>   顯示用戶輸入的卡路里 -->
+        
+        <!-- 顯示圖表 
+            <div id="tChart">
+                <canvas id="calorieChart"></canvas>    
+            </div>
+            <button id="clearData">Clear</button> 
+            
+        </section>-->
+        
+
+        <!-- 回首頁
+        <div id="Return_to_home_page">
+            <a href="../front_page/front_page.html">回首頁</a>
+        </div> -->
+   
+    </main>
+    <a href="javascript:void(0);" class="goTopBtn" id="goTop"><i class="fa-solid fa-chevron-up"></i></a>
+
+    <footer>
+        <p>&copy; 2024 輕鬆增肌</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <!-- <script type="module"> -->
+        <!-- // // Firebase SDK 初始化
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        // import { getDatabase, ref, set, get, child, update, remove } 
+        // from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        // const firebaseConfig = {
+        // apiKey: "AIzaSyDzZVKeHHLGIdgrYz7Np3XHEPsk7FbhLIE",
+        // authDomain: "healthy-food-938d3.firebaseapp.com",
+        // databaseURL: "https://healthy-food-938d3-default-rtdb.firebaseio.com",
+        // projectId: "healthy-food-938d3",
+        // storageBucket: "healthy-food-938d3.appspot.com",
+        // messagingSenderId: "88881865492",
+        // appId: "1:88881865492:web:0957c85928202e9c8d9801",
+        // measurementId: "G-YJ7VXRSBK8"
+        // };
+
+        // const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        // const db = getDatabase(app);
+
+        // // 參考變數
+        // const bmiForm = document.getElementById("bmiForm");
+        // const calorieForm = document.getElementById("calorieForm");
+        // const bmiOutput = document.getElementById("bmiOutput");
+        // const calorieOutput = document.getElementById("calorieOutput");
+        // const insBtn = document.getElementById("Insbtn");
+        // const selBtn = document.getElementById("Selbtn");
+        // const updBtn = document.getElementById("Updbtn");
+        // const delBtn = document.getElementById("Delbtn");
+        // const clearDataBtn = document.getElementById("clearData");
+
+        // // BMI 計算和顯示
+        // bmiForm.addEventListener("submit", (e) => {
+        //     e.preventDefault();
+        //     const height = parseFloat(document.getElementById("height").value);
+        //     const weight = parseFloat(document.getElementById("weight").value);
+        //     const gender = document.querySelector('input[name="gender"]:checked').value;
+        //     const age = parseInt(document.getElementById("age").value);
+
+        //     const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+        //     bmiOutput.innerText = `你的 BMI 是: ${bmi}`;
+            
+        //     // 可以在此處將 BMI 和其他基本信息保存到 Firebase
+        // });
+
+        // // 插入資料功能
+        // function insertData(){
+        //     const name = document.getElementById("name").value;
+        //     const stdnumber = document.getElementById("stdnumber").value;
+        //     const gender = document.querySelector('input[name="gender"]:checked')?.value; // 獲取選中的性別
+        //     const age = document.getElementById("age").value;
+        //     const height = document.getElementById("height").value;
+        //     const weight = document.getElementById("weight").value;
+            
+        //     set(ref(db, 'Users/' + stdnumber), {
+        //         Name: name,
+        //         stdnumber: stdnumber,
+        //         Gender: gender,
+        //         Age: age,
+        //         Height: height,
+        //         Weight: weight
+        //     })
+        //     .then(() => {
+        //         alert("Data Inserted Successfully");
+        //     })
+        //     .catch((error) => {
+        //         alert("Data Insertion Failed: " + error);
+        //     });
+        // }
+        // // 選擇資料功能
+        // function selectData(){
+        //     const stdnumber = document.getElementById("stdnumber").value; // 確保讀取學號
+
+        //     if (!stdnumber) {
+        //         alert("Please enter a valid student number.");
+        //         return;
+        //     }
+        //     const dbRef = ref(db);
+        //     get(child(dbRef, 'Users/' + stdnumber)).then((snapshot) => {
+        //         if (snapshot.exists()) {
+        //             document.getElementById("name").value = snapshot.val().Name;
+        //             document.getElementById("stdnumber").value = snapshot.val().stdnumber;
+        //             document.querySelector(`input[name="gender"][value="${snapshot.val().Gender}"]`).checked = true;
+        //             document.getElementById("age").value = snapshot.val().Age;
+        //             document.getElementById("height").value = snapshot.val().Height;
+        //             document.getElementById("weight").value = snapshot.val().Weight;
+        //         } else {
+        //             alert("No data found");
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         alert("Data Selection Failed: " + error);
+        //     });
+        // }
+        // // 更新資料功能
+        // function updateData(){
+        //     const name = document.getElementById("name").value;
+        //     const stdnumber = document.getElementById("stdnumber").value;
+        //     const gender = document.querySelector('input[name="gender"]:checked').value; // 獲取選中的性別
+        //     const age = document.getElementById("age").value;
+        //     const height = document.getElementById("height").value;
+        //     const weight = document.getElementById("weight").value;
+        //     update(ref(db, 'Users/' + stdnumber), {
+        //         Name: name,
+        //         Gender: gender,
+        //         Age: age,
+        //         Height: height,
+        //         Weight: weight
+        //     })
+        //     .then(() => {
+        //         alert("Data update Successfully");
+        //     })
+        //     .catch((error) => {
+        //         alert("Data update Failed: " + error);
+        //     });
+        // }
+        // // 刪除資料功能
+        // function deleteData(){
+        //     const stdnumber = document.getElementById("stdnumber").value; // 確保獲取的是學號的值
+        //     if (!stdnumber) {
+        //         alert("Please enter a valid student number.");
+        //         return;
+        //     }
+        //     remove(ref(db, 'Users/' + stdnumber))
+        //     .then(() => {
+        //         alert("Data Deleted Successfully");
+        //     })
+        //     .catch((error) => {
+        //         alert("Data Deletion Failed: " + error);
+        //     });
+        // }
+        // // 事件綁定
+        // insBtn.addEventListener("click", insertData);
+        // selBtn.addEventListener("click", selectData);
+        // updBtn.addEventListener("click", updateData);
+        // delBtn.addEventListener("click", deleteData);
+
+        // // 清除數據
+        // clearDataBtn.addEventListener("click", () => {
+        //     // 清除相關數據和圖表
+        // }); -->
+    <!-- </script> -->
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Build_muscle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./Build_muscle.js"></script>
+    <title>運動增肌</title>
+</head>
+<body id="topPage">
+    <div class="header">
+        <div class="container">
+            <h1>運動增肌</h1>
+            <span>Healthy Eating, Healthy Exercise.</span>
+        <a href="#" class="logo">  <!--  漢堡條 -->
+            <!-- <i class="fab fa-spotify fa-3x"></i> -->
+            
+        </a>
+            <nav class="navbar">
+                <a href="../front_page/front_page.html" class="item">首頁</a>
+                <a href="../fat_loss/fat_loss.html" class="item">減脂</a>
+                <a href="../Build_muscle/Build_muscle.html" class="item">增肌</a>
+                <a href="../calculate/calculate.html" class="item">計算健康</a>
+            </nav>
+        
+        </div>
+    </div>
+    
+    <main>
+
+        
+        <h2>增肌飲食小知識</h2>
+        <ul class="hint">
+            <li data-info="高蛋白飲食有助於肌肉合成，特別是優質蛋白質如雞胸肉、魚類等可以提高運動後的恢復效果。" data-title="高蛋白飲食">高蛋白飲食</li>
+            <li data-info="增加總熱量的攝入對於增肌非常重要，確保你攝入的熱量超過日常所需，以便提供能量支持肌肉增長。" data-title="增加總熱量攝入">增加總熱量攝入</li>
+            <li data-info="多喝水有助於保持肌肉細胞的正常功能，還可以幫助減少肌肉損傷。" data-title="多喝水">多喝水</li>
+            <li data-info="複雜的碳水化合物如全穀類、糙米等能夠提供持久的能量，對於長時間的運動尤其重要。" data-title="選擇複雜的碳水化合物">選擇複雜的碳水化合物</li>
+            <li data-info="攝入健康脂肪如橄欖油、亞麻籽油等，這些脂肪對於荷爾蒙平衡和肌肉的增長也很重要。" data-title="攝入健康脂肪">攝入健康脂肪</li>
+        </ul>
+
+        <div id="tooltip" style="display: none; position: absolute; background: #fff; border: 1px solid #ccc; padding: 10px; z-index: 1000;">
+                    <strong id="tooltip-title"></strong>
+                    <p id="tooltip-info"></p>
+        </div>
+
+
+
+
+        <div id="business_cards">
+            <div id="business_card">
+                <h3>蘑菇雞胸肉</h3>
+                <img src="../圖片/蘑菇雞胸肉.jpg
+                " alt="Muscles">
+                <p>蘑菇蛋白質含量高，脂肪含量低，通常在1%以下，多數甚至不
+                    到0.5%，堪稱“零脂肪素肉”，但本身如有腎臟問題、痛風患者及
+                    腸胃功能較弱的族群不建議吃過多。</p>
+            </div>
+            <div id="business_card">
+                <h3>蘆筍炒蝦仁</h3>
+                <img src="../圖片/蘆筍炒蝦仁.jpg
+                " alt="Muscles">
+                <p>每100 克的蘆筍僅含有20大卡的熱量，卻包含了50% 的蛋白質、
+                    42% 的碳水化合物，一隻去殼後約10克的蝦子含有2～3克的蛋白
+                    質，二者皆為優質的蛋白質來源。</p>
+            </div>
+            <div id="business_card">
+                <h3>照燒鯖魚</h3>
+                <img src="../圖片/照燒靖魚.jpg" alt="Muscles">
+                <p>富含蛋白質、脂肪並含很好的維他命，所含omega-3除抗癌
+                    外，蛋白質提高免疫力，維他命B2促進脂肪代謝，且相較於鮭
+                    魚，鯖魚的營養價值更勝一籌。</p>
+            </div>
+            <div id="business_card">
+                <h3>無糖豆漿</h3>
+                <img src="../圖片/無糖豆漿.jpg" alt="Muscles">
+                <p>豆漿在生活中相對容易取得，其富含蛋白質，增肌功效佳，也
+                    比市面上銷售的任何乳清蛋白便宜，還含有更多元的胺基酸，
+                    是運動後的好選擇之一。</p>
+            </div>
+            <div id="business_card">
+                <h3>全穀物麵包</h3>
+                <img src="../圖片/全穀物麵包.jpg" alt="Muscles">
+                <p>相同的營養素比例之下，碳水化合物以全穀類替換，相較於全部
+                    精緻的碳水化合物組成，可以提高身體的蛋白質轉換率，另外，
+                    研究結果也支持，這樣的飲食可以增加年長者的肌肉功能。</p>
+            </div>
+            <div id="business_card">
+                <h3>鮪魚壽司</h3>
+                <img src="../圖片/鮪魚壽司.jpg" alt="Muscles">
+                <p>鮪魚壽司是一種非常理想的運動前零食，蛋白質可以以防止肌
+                    肉分解，而碳水化合物可以作為「燃料」，給予能量來應付劇烈
+                    運動時的需要。</p>
+            </div>
+            <div id="business_card">
+                <h3>烤雞胸肉串</h3>
+                <img src="../圖片/烤雞胸肉串.jpg" alt="Muscles">
+                <p>雞胸肉富含優質蛋白，每100克雞胸肉大約含有20-24克蛋白質且含有豐富的必需氨基酸，這是觸發肌肉蛋白質合成的關鍵氨基酸，有助於肌肉增長。</p>
+            </div>
+            <div id="business_card">
+                <h3>涼拌杏包菇雞絲</h3>
+                <img src="../圖片/涼拌杏包菇雞絲.jpg" alt="Muscles">
+                <p>富含蛋白質和膳食纖維，同時低熱量低脂肪，非常適合增肌和控制體脂的人食用。杏包菇和雞胸肉的搭配不僅增加了口感，還帶來了多種營養成分，特別適合在運動後食用來幫助肌肉恢復。</p>
+            </div>
+            
+        </div>
+    </main>
+    
+
+    <a href="javascript:void(0);" class="goTopBtn" id="goTop"><i class="fa-solid fa-chevron-up"></i></a>
+
+
+
+
+    <footer>
+        <p>&copy; 2024 輕鬆增肌</p>
+    </footer>
+    
+
+
+
+
+
+</body>
+</html>

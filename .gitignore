@@ -1,2 +1,6 @@
 .env
+<<<<<<< HEAD
 //放你不想共享的檔案
+=======
+mood.py
+>>>>>>> refs/remotes/origin/main

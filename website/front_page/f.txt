@@ -1,0 +1,70 @@
+*{
+    background-color: rgb(235, 230, 206);
+}
+#tChart{
+    width: 300px !important;
+    height: 300px !important;
+}
+
+header{
+    margin: 0 ;
+    width: 1240px;
+    
+}
+h1{
+    text-align: center;
+    padding: 20px 0px 16px;
+}
+h1 img{
+    border-radius: 30px;
+    width: 20%;
+    height: 20%;
+}
+header nav ul{
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #5a5a70;
+    border-bottom: 2px solid #5a5a70;
+    background-color: rgb(255, 255, 255,0.45);
+    padding: 12px 0px 10px;
+}
+header nav ul li{
+    list-style: none;/* 從清單中刪除點 */
+    margin: 0px 40px;
+}
+header nav ul li a{
+    text-decoration: underline double;/*去除底線*/
+    color: #5a5a70;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+header nav ul li a:hover{
+    color: rgb(43, 33, 2);
+}
+
+.floating-button{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #0b4606;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 6px 12px #242430;
+    transition: background-color 0.3s,transform 0.3s;
+}
+.floating-button:hover{
+    background-color: #9e6816;
+    color: #fff7f7;
+    transform: scale(1.1);
+}
+
+
+@media screen and (min-width : 920px) {
+    
+}

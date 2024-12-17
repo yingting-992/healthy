@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fat_loss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./fat_loss.js"></script>
+    <title>輕鬆減脂</title>
+</head>
+<body id="topPage">
+    <div class="header">
+        <div class="container">
+            <h1>輕鬆減脂</h1>
+            <span>Healthy Eating, Healthy Exercise.</span>
+        <a href="#" class="logo">  <!--  漢堡條 -->
+            <!-- <i class="fab fa-spotify fa-3x"></i> -->
+            
+        </a>
+        <nav class="navbar">
+            <a href="../front_page/front_page.html" class="item">首頁</a>
+            <a href="../fat_loss/fat_loss.html" class="item">減脂</a>
+            <a href="../Build_muscle/Build_muscle.html" class="item">增肌</a>
+            <a href="../calculate/calculate.html" class="item">計算健康</a>
+        </nav>
+        
+        </div>
+    </div>
+    
+    <main>
+        <h2>減脂飲食小知識</h2>
+        <ul class="hint">
+            <li data-info="減少熱量攝取可以幫助促進脂肪燃燒，建立健康的飲食習慣。" data-title="減少熱量攝取">減少熱量攝取</li>
+            <li data-info="多吃蔬果提供豐富的纖維和營養，有助於提高飽腹感並減少總熱量攝入。" data-title="多吃蔬果">多吃蔬果</li>
+            <li data-info="保持充足的水分攝入不僅有助於新陳代謝，還能減少食慾。" data-title="多喝水">多喝水</li>
+            <li data-info="少吃油炸食物可以減少不必要的熱量和不健康的脂肪攝入，對於減脂有利。" data-title="少吃油炸食物">少吃油炸食物</li>
+            <li data-info="減少高糖食物的攝入可以幫助穩定血糖，避免脂肪堆積。" data-title="少吃高糖食物">少吃高糖食物</li>
+        </ul>
+
+        <!-- 創建了一個隱藏的提示框（tooltip） -->
+        <div id="tooltip" style="display: none; position: absolute; background: #fff; border: 1px solid #ccc; padding: 10px; z-index: 1000;">
+            <strong id="tooltip-title"></strong>
+            <p id="tooltip-info"></p>
+        </div>
+
+        <div id="business_cards">
+            <div id="business_card">
+                <h3>酪梨太陽蛋吐司</h3>
+                <img src="../圖片/酪梨太陽蛋吐司.jpg" alt="salmon">
+                <p>酪梨所含的植物脂肪具有降低膽固醇功能的「不飽和脂肪酸」，油脂能延長飽足感，減少進食，且酪梨富含礦物質與維生素，營養價值極高，但一天不宜食用超過半顆。</p>
+            </div>
+            <div id="business_card">
+                <h3>義式舒肥雞胸肉</h3>
+                <img src="../圖片/義式舒肥雞胸肉.jpg" alt="salmon">
+                <p>雞胸肉不含碳水化合物，所以除了增肌，也是瘦身減脂常見的食材，雞胸肉的最大優點就是低卡、低脂、高蛋白，是極佳的蛋白質補充來源。</p>
+            </div>
+            <div id="business_card">
+                <h3>嫩煎鮭魚</h3>
+                <img src="../圖片/嫩煎鮭魚.jpg" alt="salmon">
+                <p>鮭魚可以有效幫助脂肪燃燒並減少發炎，當中含有的omega-3脂肪酸對於維持心臟健康非常重要，不僅能幫助代謝，還能燃燒體內更多的卡路里，達到減脂的功用。</p>
+            </div>
+            <div id="business_card">
+                <h3>蘆筍炒甜椒</h3>
+                <img src="../圖片/蘆筍炒甜椒.jpg" alt="salmon">
+                <p>蘆筍富含豐富的天門冬胺酸，它是胺基酸的一種，能提高新陳代謝，有助於減肥。蘆筍中所含的豐富葉酸成分，更有降低熱量轉換成脂肪的作用，且有助多餘膽固醇及脂肪排出的效果。</p>
+            </div>
+            <div id="business_card">
+                <h3>無糖優格</h3>
+                <img src="../圖片/無糖優格.jpg" alt="salmon">
+                <p>優格是減脂期間的好選擇，特別是選擇低糖或無糖的種類，它富含蛋白質且能夠增強飽足感，益生菌能助於腸道的健康，新陳代謝也會跟著好，還能有助於免疫系統運作。</p>
+            </div>
+            <div id="business_card">
+                <h3>莓果</h3>
+                <img src="../圖片/莓果.jpg" alt="salmon">
+                <p>莓果類包含藍莓、草莓、黑莓、覆盆子，非常適合減脂期間食用，低熱量、高纖維，富含抗氧化劑、維生素及抗發炎成分，也能有助於增強免疫力，對整體健康有很大的幫助。</p>
+            </div>
+            <div id="business_card">
+                <h3>清炒鮮菇花椰菜</h3>
+                <img src="../圖片/清炒鮮菇花椰菜.jpg" alt="salmon">
+                <p>花椰菜是高纖蔬菜，可幫助腸道蠕動、提升身體的基礎代謝，讓身體的血液循環變好還能消水腫，也含有胡蘿蔔素和類黄酮，能抑制身體對油脂的吸收，並加速脂肪的燃燒代謝。</p>
+            </div>
+            <div id="business_card">
+                <h3>番茄蔬菜湯</h3>
+                <img src="../圖片/番茄蔬菜湯.jpg" alt="salmon">
+                <p>番茄的熱量低且含水量高，富含纖維及茄紅素，也能夠提供多種維生素，特別是維生素C有助於抗炎、增強免疫力、促進代謝和燃燒脂肪，無論是單吃或是搭配其他菜餚都對於營養均衡很有幫助。</p>
+            </div>
+            
+        </div>
+    </main>
+    <a href="javascript:void(0);" class="goTopBtn" id="goTop"><i class="fa-solid fa-chevron-up"></i></a>
+    
+    <footer>
+        <p>&copy; 2024 輕鬆減脂</p>
+    </footer>
+
+    
+
+</body>
+</html>

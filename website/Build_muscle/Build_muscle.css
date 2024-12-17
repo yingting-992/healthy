@@ -1,0 +1,291 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 讓padding和border不會撐大元素 */
+}
+
+ /* 新加  淡入 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;/* 透明度 */
+        transform: translateY(20px); /* Y軸位移 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h1, main h2, #business_cards { 
+    animation: fadeIn 1s ease forwards; /* 動畫名稱 時間 函數 保持最後狀態 */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    .item {
+        flex-grow: 1;
+        padding: 20px;
+        border-bottom: 5px solid transparent;
+        transition: 0.3s;
+        &:hover {
+            border-bottom: 5px solid #0e4d2d;
+        }
+    }
+}
+
+.navbar .item {
+    text-align: center;
+    padding: 15px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #004d40;
+    margin: 20px 0 0 0 ;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+}
+.container span {
+    display: block;
+    text-align: center;
+    align-items: center;
+    color: #0e4d2d;
+}
+body {
+    /* font-family: 'Catamaran', sans-serif; */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #f0f0f0; /* 背景色 */
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #094226;
+    font-weight: 300;
+}
+img {
+    max-width: 100%; /* 最大寬度為100% */
+    height: auto;
+}
+        
+header {
+    background-color: #004d40; /* 深綠色主色 */
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff;          
+}
+        
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #004d40; /* 深綠色主色 */
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.hint {
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.hint li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 5px solid #004d40; /* 深綠色主色 */
+    font-size: 1.1em;
+}
+
+ul li:hover {
+    background-color: #e0f2f1; /* 浅绿色 */;
+    transition: background-color 0.3s ease;
+}
+
+#business_cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#business_card {
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 20px); /* 三欄佈局 */
+}
+
+#business_card h3 {
+    color: #004d40; /* 深綠色主色 */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#business_card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+#business_card p {
+    text-align: left;
+    color: #333333;
+}
+
+#business_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer {
+    background-color: #004d40; /* 深綠色主色 */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    /* position: fixed; 不需定格*/
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 920px) {
+    ul {
+        columns: 2; /* 列表兩欄顯示 */
+        column-gap: 40px; /* 欄之間的間距 */
+    }
+
+    #business_card {
+        flex: 1 1 calc(33.33% - 20px); /* 三欄佈局 */
+    }
+}
+
+@media screen and (max-width: 920px) {
+    #business_card {
+        flex: 1 1 calc(50% - 20px); /* 兩欄佈局 */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #business_card {
+        flex: 1 1 100%; /* 單欄佈局 */
+    }
+}
+
+
+
+
+#goTop {
+    position: fixed;
+    right: 200px;
+    bottom: 70px;
+    display: none;
+    width: 90px;  
+    height: 90px;
+    background-color: #098245;
+    color: white;
+    border: none;
+    text-align: center;
+    line-height: 90px;
+    text-decoration: none;
+    border-radius: 50%; 
+    font-size: 40px;
+    z-index: 1000;
+}
+
+#goTop:hover {
+    background-color: #089b58;
+} 
+
+
+
+/* 網頁版 */
+@media screen and (min-width: 600px) {
+    #goTop {
+        right: 200px;
+        width: 90px;
+        height: 90px;
+    }
+    
+    #business_card img {
+        width: 100%;
+    }
+}
+
+/* 手機版 */
+@media screen and (max-width: 600px) {
+    #goTop {
+        right: 30px;  /* 讓按鈕距離右邊更近 */
+        bottom: 50px; /* 讓按鈕距離底部更近 */
+        width: 60px;  /* 按鈕縮小尺寸 */
+        height: 60px;
+        line-height: 60px;
+        font-size: 30px;
+    }
+    
+    #business_card img {
+        width: 90%;   /* 縮小圖片寬度 */
+        margin: 0 auto; /* 居中圖片 */
+    }
+}
+
+
+
+
+
+
+.tooltip {
+    display: none; /* 初始狀態為隱藏 */
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px; /* 提示框寬度 */
+    max-width: 200px; /* 最大宽度 */
+    border-radius: 5px; /* 圆角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 阴影 */
+}
+
+.tooltip h4 {
+    font-weight: bold; /* 標題加粗 */
+    margin: 0 0 5px; /* 標題下方的間距 */
+}
