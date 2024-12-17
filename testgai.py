@@ -1,6 +1,9 @@
 import os
+from dotenv import load_dotenv
 import google.generativeai as generativeai
 
-generativeai.configure(api_key="AIzaSyDB7MIvqNNHcBlxcB62E4nlOwCvpx6u8LI")
+load_dotenv()
+
+generativeai.configure(api_key=os.getenv('api_key'))
 response=generativeai.GenerativeModel('gemini-2.0-flash-exp').generate_content('掰掰')
 print(response.text)
