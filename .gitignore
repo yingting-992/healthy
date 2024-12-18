@@ -1,6 +1,5 @@
 .env
-<<<<<<< HEAD
-//放你不想共享的檔案
-=======
 mood.py
->>>>>>> refs/remotes/origin/main
+testgai.py
+front_page1.css
+front_page1.html

@@ -2,100 +2,168 @@
 *{
     margin: 0;
     padding: 0;
-    /*box-sizing: border-box;讓padding和border不會撐大元素*/
 }
+
 body{
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #2c2c2c;
 }
+
 img{
-    max-width: 100%; /*最大寬度為100%*，width:100%會強制把小的圖片也擴大*/
+    max-width: 100%;
     height: auto;
 }
 
 .topPage header{
-    height: 90vh;
-    background: url(../圖片/主頁背景.jpg)no-repeat center top/cover;
-    padding-top: 50px;/*讓文字不要貼到上面*/
+    height: 100vh;
+    background: url(../圖片/主頁背景.jpg) no-repeat center top/cover;
+    padding-top: 50px;
 }
+
 .topPage header h1 img{
     width: 240px;
     border-radius: 100%;
 }
+
 .topPage header h1{
     text-align: center;
 }
-.linkList{
-    padding: 20px 0;
+
+/* 让图片容器和卡片有一致的效果 */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.25rem;
+    transition: all 400ms;
+    margin: 0 auto;
 }
-.linkList li{
-    margin-bottom: 40px;
-    list-style-type: none; /*清除點*/
+
+.card {
+    flex: 1;
+    height: 100%;
+    transition: all 400ms;
+    cursor: pointer;
 }
-.linkList li a{
-    display: block;/*讓連結變成區塊元素，讓整個區塊都可以點擊*/
-    background-color: #f5f5f5;
-    color: #2c2c2c;
+
+.card > a {
+    display: block;
     text-decoration: none;
+    color: inherit;
 }
-.linkList li a span{
+
+.card > a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card > a span {
     display: block;
     padding: 12px 15px 10px;
     font-weight: bold;
-}
-.linkList li a:hover{
-    filter: brightness(90%);
+    text-align: center;
+    font-size: 18px;  /* 字体大小适中 */
+    color: #fff;  /* 白色文字，适合与深色背景对比 */
+    background: rgba(0, 0, 0, 0.6);  /* 背景透明黑色，让文字更突出 */
+    border-radius: 8px;  /* 增加圆角 */
+    transition: transform 0.3s ease, background 0.3s ease;  /* 平滑的过渡效果 */
+    letter-spacing: 1px;  /* 适当增加字母间距，提升可读性 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);  /* 增加阴影效果 */
 }
 
+.card > a span:hover {
+    background: rgba(0, 0, 0, 0.8);  /* 鼠标悬停时加深背景色 */
+    transform: translateY(-5px);  /* 鼠标悬停时向上微移动 */
+}
 
+.card > a span::before {
+    content: '';  /* 创建伪元素，用于增加装饰 */
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 12px;
+    z-index: -1;  /* 将伪元素放在文字后面 */
+}
+
+/* 电脑端 (保持 translate) */
+.card:nth-child(odd) {
+    translate: 0 -30px;
+}
+
+.card:nth-child(even) {
+    translate: 0 100px;
+}
+
+.container:hover .card:not(:hover) {
+    filter: grayscale(100%);
+}
+
+.card:hover {
+    flex: 1.5;
+}
+
+/* 大於920px的設備（桌面設備） */
 @media screen and (min-width: 920px){
     .topPage{
         display: flex;
     }
+
     .topPage header{
-        flex-basis: 38%;/* 用% 較彈性 */
+        flex-basis: 38%;
     }
+
     .topPage main{
         flex-basis: 62%;
-    }
-    .linkList{
-        display: flex;/*讓li並排*/
-        flex-wrap: wrap;/*超過寬度換行*/
-        /* padding: 50px 100px 100px 100px; */
-        max-width: 800px;
-        margin: 0 auto;
-        justify-content: space-around;/*左右對齊*/
-    }
-    .linkList li{
-        flex-basis: 47%;/*一行放兩個*/
-        margin-bottom: 20px;
-        list-style: none;/* 從清單中刪除點 */
-    }
-    .linkList::before{
-        content: '';
-        width: 47%;
-        background : url("../圖片/logo2.png") no-repeat center center/72%;
-        /* 第一個 center：代表水平位置居中。
-           第二個 center：代表垂直位置居中。 */
-        /*cover表示背景圖片會自動調整大小以完全覆蓋整個元素背景，不管圖片的原始大小如何。*/
-    }
-    .topPage main{
-        display: flex;/*讓main裡的元素並排*/
-        align-items: center;/*垂直置中*/ 
-    }
-    .topPage header {
-        height: 300vh;
-        margin-bottom: 0;
-    }
-    /*單用.main父元素會影響到其他頁面的main，所以要加上.topPage*/
-    .topPage main{
         display: flex;
-        align-items: center;/*把彈性項目垂直，就變成上下左右置中*/
+        align-items: center;
     }
+}
+
+/* 小於920px的設備（手機和小型平板） */
+@media screen and (max-width: 919px){
     .topPage header{
-        height: 100vh;
-        margin-bottom: 0;
+        height: 60vh; /* 減少header高度 */
+        padding-top: 20px;
+    }
+
+    .topPage header h1 img{
+        width: 180px; /* 更小的圖片尺寸 */
+    }
+
+    .container {
+        flex-direction: column; /* 垂直排列卡片 */
+        height: auto; /* 去除固定高度 */
+    }
+
+    .card {
+        margin-bottom: 20px; /* 卡片之间增加间距 */
+        flex: 1 0 100%; /* 每个卡片都占据100%的宽度 */
+    }
+
+    .card > a span {
+        font-size: 16px; /* 小屏幕下文字稍微缩小 */
+        padding: 10px; /* 减小文字的内边距 */
+    }
+
+    .container:hover .card:not(:hover) {
+        filter: none; /* 在移动端取消灰度效果 */
+    }
+
+    .card:hover {
+        flex: 1; /* 移动端卡片不放大 */
+    }
+
+    /* 在手机端移除 translate */
+    .card:nth-child(odd), .card:nth-child(even) {
+        translate: none;
     }
 }
