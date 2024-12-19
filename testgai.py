@@ -15,5 +15,3 @@ print(response.text)
 
 
 
-
-afasfas
