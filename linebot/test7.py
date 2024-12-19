@@ -5,7 +5,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
-    QuickReply, QuickReplyButton, MessageAction, FlexSendMessage,ImageMessage
+    QuickReply, QuickReplyButton, MessageAction, FlexSendMessage
 )
 import requests
 from bs4 import BeautifulSoup
@@ -62,7 +62,7 @@ app = Flask(__name__)
 # 爬取網頁內容並生成 Flex Message
 # 爬取網頁內容並生成 Flex Message
 def fetch_web_content(section_type):
-    url = "https://shujuan1015.github.io/dd.html"  # 網頁的目標連結
+    url = "https://yingting-992.github.io/healthy/grab.html"  # 網頁的目標連結
     response = requests.get(url)
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -193,7 +193,7 @@ def handle_message(event):
     # 減脂小知識
     if user_message == "減脂小知識":
         reply_text = TextSendMessage(
-            text=('以上為減脂小知識😁'
+            text=('減脂無負擔，輕鬆塑健康！💪'
             )
         )
         line_bot_api.reply_message(event.reply_token, reply_text)
@@ -202,7 +202,7 @@ def handle_message(event):
     # 增肌小知識
     if user_message == "增肌小知識":
         reply_text = TextSendMessage(
-            text=('以上為增肌小知識😁'
+            text=('增肌有策略，力量更有型！🏋️'
             )
         )
         line_bot_api.reply_message(event.reply_token, reply_text)
@@ -213,50 +213,24 @@ def handle_message(event):
     reply_text = TextSendMessage(text="抱歉，我無法識別您的訊息，請選擇功能選單再試一次！")
     line_bot_api.reply_message(event.reply_token, reply_text)
 
-# 圖片分析功能
-def analyze_image_with_custom_vision(image_path):
-    headers = {
-        "Prediction-Key": AZURE_CUSTOM_VISION_KEY,
-        "Content-Type": "application/octet-stream"
-    }
-    with open(image_path, "rb") as image_data:
-        response = requests.post(AZURE_CUSTOM_VISION_URL, headers=headers, data=image_data)
-    if response.status_code != 200:
-        print(f"Azure Custom Vision API 錯誤：{response.status_code}, {response.text}")
-        return None
-    result = response.json()
-    predictions = result.get("predictions", [])
-    if predictions:
-        top_prediction = max(predictions, key=lambda x: x["probability"])
-        if top_prediction["probability"] > 0.3:
-            return top_prediction["tagName"].lower()
-    return None
-
-@handler.add(MessageEvent, message=ImageMessage)
-def handle_image_message(event):
-    image_path = os.path.join(os.getcwd(), "uploaded_image.jpg")
-    try:
-        message_content = line_bot_api.get_message_content(event.message.id)
-        with open(image_path, "wb") as f:
-            for chunk in message_content.iter_content():
-                f.write(chunk)
-
-        detected_object = analyze_image_with_custom_vision(image_path)
-        os.remove(image_path)
-
-        if detected_object in CALORIE_INFO:
-            reply_message = f"檢測到的物件是：{detected_object}\n熱量：{CALORIE_INFO[detected_object]}"
-        else:
-            reply_message = "未能識別圖片中的物件，請再試一次！"
-
-    except Exception as e:
-        print(f"處理圖片時發生錯誤: {e}")
-        reply_message = "處理圖片時發生錯誤，請稍後再試！"
-
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=reply_message)
-    )
+# # 圖片分析功能
+# def analyze_image_with_custom_vision(image_path):
+#     headers = {
+#         "Prediction-Key": AZURE_CUSTOM_VISION_KEY,
+#         "Content-Type": "application/octet-stream"
+#     }
+#     with open(image_path, "rb") as image_data:
+#         response = requests.post(AZURE_CUSTOM_VISION_URL, headers=headers, data=image_data)
+#     if response.status_code != 200:
+#         print(f"Azure Custom Vision API 錯誤：{response.status_code}, {response.text}")
+#         return None
+#     result = response.json()
+#     predictions = result.get("predictions", [])
+#     if predictions:
+#         top_prediction = max(predictions, key=lambda x: x["probability"])
+#         if top_prediction["probability"] > 0.3:
+#             return top_prediction["tagName"].lower()
+#     return None
 
 
 
@@ -273,3 +247,9 @@ def callback():
 
 if __name__ == "__main__":
     app.run(port=5000)
+
+
+
+
+
+
