@@ -22,8 +22,8 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # Azure Custom Vision 設定
-AZURE_CUSTOM_VISION_URL = "https://hhhtt-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/09df699c-0bac-4052-b505-e158b7e42092/classify/iterations/Iteration2/image"
-AZURE_CUSTOM_VISION_KEY = "3lLEQUuqbJPCfvcXLQ8MOidnB5eN8mAVJ371kjIOry8gBIlXRekTJQQJ99ALACYeBjFXJ3w3AAAIACOGgCTU"
+AZURE_CUSTOM_VISION_URL = "https://food70-prediction.cognitiveservices.azure.com//customvision/v3.0/Prediction/09df699c-0bac-4052-b505-e158b7e42092/classify/iterations/Iteration2/image"
+AZURE_CUSTOM_VISION_KEY = "1jjtSqH15ozMQOuEWog20PwSROXE6OBaCuaFHsgLv9i7onQRGh5kJQQJ99ALACYeBjFXJ3w3AAAJACOGVs56"
 
 # SMTP 配置
 SMTP_SERVER = 'smtp.gmail.com'
@@ -35,7 +35,7 @@ SENDER_PASSWORD = 'tjfm tcya zfab oejf'
 feedback_dict = {}
 
 # 載入外部 JSON 文件
-def load_calorie_info(json_path=r"C:\Users\User\Downloads\calorie_info.json"):
+def load_calorie_info(json_path="reptile/calorie_info.json"):
     with open(json_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
