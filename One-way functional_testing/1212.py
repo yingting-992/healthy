@@ -14,14 +14,14 @@ import json
 import os
 
 # LINE Bot 設定
-LINE_CHANNEL_ACCESS_TOKEN = "/FGgyGN3HRkCPIUyrj694l3wgO02htU+cmIfnhhBHawC6550rDajjaYbeX0Y0LY4CP/ALmASpGIclGoQXw2/ZMGG6WhEvm+CKoGSKaTKaO8hJT3CMZytUluskj0gcobEJoj/f7jFKsO/0rM7wHeruwdB04t89/1O/w1cDnyilFU="
-LINE_CHANNEL_SECRET = "969aed1d7a639c88b209d81bfd47db0f"
+LINE_CHANNEL_ACCESS_TOKEN = "Yv+xNQGDwjLsk32CtARfNWGaP7RIH+ZfWjMLu3eQ56bkBxLvBT08TX2grN5a4KNa8WPwRkq+r+4pjm4EiYx96Ke9GaR9jIVRAjJdLhBrA7/t84dDcxkiTSeARkQy0WuG22jRviYUaIINRfy8icqS5wdB04t89/1O/w1cDnyilFU="
+LINE_CHANNEL_SECRET = "2cb10f89f7129b5c3eb4daca299eb47a"
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 # Azure Custom Vision 設定
-AZURE_CUSTOM_VISION_URL = "https://hhhtt-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/09df699c-0bac-4052-b505-e158b7e42092/classify/iterations/Iteration2/image"
-AZURE_CUSTOM_VISION_KEY = "3lLEQUuqbJPCfvcXLQ8MOidnB5eN8mAVJ371kjIOry8gBIlXRekTJQQJ99ALACYeBjFXJ3w3AAAIACOGgCTU"
+AZURE_CUSTOM_VISION_URL = "https://food70-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1a75e191-f35b-4657-879c-ef0b8d0a68d9/classify/iterations/Iteration2/image"
+AZURE_CUSTOM_VISION_KEY = "8pMOLkNndA3qrDFy6Yjn0ZkgWBjoErhz3ruqhiVhT3zRFOXbXh71JQQJ99ALACYeBjFXJ3w3AAAIACOG5bXr"
 
 # SMTP 配置
 SMTP_SERVER = 'smtp.gmail.com'
@@ -33,7 +33,7 @@ SENDER_PASSWORD = 'tjfm tcya zfab oejf'
 feedback_dict = {}
 
 # 載入外部 JSON 文件
-def load_calorie_info(json_path=r"C:\\Users\\at930\\OneDrive\\桌面\\筆記夾\\azure證照107\\新增資料夾\\healthy\\calorie_info.json"):
+def load_calorie_info(json_path=r"C:\\Users\\LC29\\健康專案\\healthy\\reptile\\calorie_info.json"):
     with open(json_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
