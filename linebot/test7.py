@@ -25,8 +25,8 @@ AZURE_CUSTOM_VISION_KEY = "3lLEQUuqbJPCfvcXLQ8MOidnB5eN8mAVJ371kjIOry8gBIlXRekTJ
 # SMTP 配置
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
-SENDER_EMAIL = 'zsj9413@gmail.com'
-SENDER_PASSWORD = 'tjfm tcya zfab oejf'
+SENDER_EMAIL = 'C112156127@nkust.edu.tw'
+SENDER_PASSWORD = 'ofct baco nehg jkkv'
 
 # 用戶回饋狀態
 feedback_dict = {}
