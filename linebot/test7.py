@@ -60,7 +60,7 @@ app = Flask(__name__)
 # 爬取網頁內容並生成 Flex Message
 # 爬取網頁內容並生成 Flex Message
 def fetch_web_content(section_type):
-    url = "https://yingting-992.github.io/healthy/grab.html"  # 網頁的目標連結
+    url = "https://yingting-992.github.io/healthy/reptile/grab.html"  # 網頁的目標連結
     response = requests.get(url)
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
