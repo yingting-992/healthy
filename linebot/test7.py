@@ -74,7 +74,7 @@ def fetch_web_content(section_type):
             # 加入文章連結
             article_link = {
                 "type": "text",
-                "text": f"了解更多請點擊：[查看完整文章]({url})",
+                "text": f"🔗了解更多請點擊：[查看完整文章]({url})",
                 "wrap": True,
                 "margin": "md",
                 "color": "#3498DB",
