@@ -21,7 +21,7 @@
             <!-- <a href="javascript:void(0);" class="hamburger-menu" id="hamburgerMenu">
                 <i class="fas fa-bars"></i>
             </a> -->
-            
+
             <nav class="navbar" id="navbar">
                 <a href="../front_page/front_page.html" class="item">首頁</a>
                 <a href="../fat_loss/fat_loss.html" class="item">減脂</a>
@@ -38,7 +38,7 @@
                     <label for="stdnumber">學號:</label>
                     <input type="text" id="stdnumber" name="stdnumber" placeholder="請輸入學號" required >
                     <div id="editMode" style="display: none;"></div><br> <!-- 用於顯示結果 -->
-                    <!--  -->     
+                    <!--  -->
                     <label for="name">姓名:</label>
                     <input type="text" id="name" name="name" placeholder="請輸入姓名" required><br>
                     <!--  -->
@@ -52,30 +52,30 @@
                     <label for="weight" id="lab">體重 (kg):</label>
                     <input type="number" id="weight" name="weight" placeholder="請輸入體重" required> <br>
                     <!--  -->
-                    
+
                     <label for="height" id="lab">性別: </label>
                     <label class="gender">
                             <input type="radio" id="male" name="gender" value="male">Male
                         <label style="margin-left: 20px;">
                             <input type="radio" id="female" name="gender" value="female">Female
-                        </label>    
-                    </label>                    
+                        </label>
+                    </label>
                 </form>
-                <form id="calorieForm">   
+                <form id="calorieForm">
                     <!-- <label for="weight">輸入今日卡路里攝取量:</label>  -->
                     <!-- <input type="number" id="weight" name="weight" > -->
                     <button type="submit">確認</button>
-                </form>  
-                  
+                </form>
+
             </div>
- 
-            
+
+
             <div id="dataoutput">
                 <h1>計算結果</h1>
                     <h2>BMI</h2>
                     <div id="bmiOutput"></div>
                     <div id="bmiFeedback" class="feedback"></div>
-                    
+
                     <h2>體脂率</h2>
                     <div id="bodyFatOutput"></div>
 
@@ -83,7 +83,7 @@
                     <div id="bmrOutput"></div>
             </div>
 
-            
+
             <div class="tot-activity">
                 <div class="totttt">
                     <div class="divider">
@@ -118,55 +118,64 @@
 
                         <div id="activityBmrOutput"></div> <br>
                         <button type="button" id="calculateActivityBMRBtn">計算每日所需熱量</button>
-                    </div>    
+                    </div>
                 </div>
             </div>
-                    
+
 
             <!-- 備用不刪 -->
             <span id="Insbtn" style="display: none;">儲存</span>
             <button id="Selbtn" style="display: none;">SELECT</button>
             <button id="Delbtn" style="display: none;">DELETE</button>
 
-            
-            
+
+
         </section>
 
-    
+
 
 
 
         <!-- 右側圖片區域 -->
         <!-- <aside class="image-section">
             <img src="../圖片/健康操.jfif" alt="健康相關圖片">
-            
+
         </aside> -->
         <!-- 讓用戶輸入每日卡路里的表單 -->
-        
 
-        
+
+
         <!-- 因體重只會跟著一個使用者所以不用了 -->
         <!--<div id="calorieOutput"></div>   顯示用戶輸入的卡路里 -->
-        
-        <!-- 顯示圖表 
+
+        <!-- 顯示圖表
             <div id="tChart">
-                <canvas id="calorieChart"></canvas>    
+                <canvas id="calorieChart"></canvas>
             </div>
-            <button id="clearData">Clear</button> 
-            
+            <button id="clearData">Clear</button>
+
         </section>-->
-        
+
 
         <!-- 回首頁
         <div id="Return_to_home_page">
             <a href="../front_page/front_page.html">回首頁</a>
         </div> -->
-   
+
     </main>
     <a href="javascript:void(0);" class="goTopBtn" id="goTop"><i class="fa-solid fa-chevron-up"></i></a>
 
     <footer>
-        <p>&copy; 2024 輕鬆增肌</p>
+        <p>&copy; 2024 輕鬆計算</p>
+        <section class="newsletter">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="0ad6bf26-9d35-47eb-ace4-33068014e730">
+                <img src="../圖片/官方LINE.png" alt="Image" width="100" height="100">
+                <input type="email" name="email" placeholder="請輸入您的電子郵件" required>
+                <input type="text" name="message" placeholder="意見回饋" required>
+                <button type="submit">送出</button>
+            </form>
+        </section>
     </footer>
 
 
@@ -181,7 +190,7 @@
         <!-- // // Firebase SDK 初始化
         // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        // import { getDatabase, ref, set, get, child, update, remove } 
+        // import { getDatabase, ref, set, get, child, update, remove }
         // from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
         // const firebaseConfig = {
@@ -220,7 +229,7 @@
 
         //     const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
         //     bmiOutput.innerText = `你的 BMI 是: ${bmi}`;
-            
+
         //     // 可以在此處將 BMI 和其他基本信息保存到 Firebase
         // });
 
@@ -232,7 +241,7 @@
         //     const age = document.getElementById("age").value;
         //     const height = document.getElementById("height").value;
         //     const weight = document.getElementById("weight").value;
-            
+
         //     set(ref(db, 'Users/' + stdnumber), {
         //         Name: name,
         //         stdnumber: stdnumber,

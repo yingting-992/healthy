@@ -31,7 +31,7 @@
 }
 
 
-.container h1, main h2 , .database { 
+.container h1, main h2 , .database {
     animation: fadeIn 1s ease forwards; /* 動畫名稱 時間 函數 保持最後狀態 */
 }
 
@@ -46,7 +46,7 @@
     text-align: center;
     font-size: 2.5em;
     color: var(--main-bg-color);
-    margin: 15px 0 0 0 ;  
+    margin: 15px 0 0 0 ;
     color: #004d40; /* 深綠色主色 */
     font-weight: bold;
 }
@@ -84,7 +84,7 @@ body {
     cursor: pointer;
     margin-right: auto; /* 靠左對齊 */
 }
- 
+
 .navbar {
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@ body {
     }
 }
 
- 
+
 .navbar a {
     text-decoration: none;
     color: #333;
@@ -150,7 +150,7 @@ body {
     /* .hamburger-menu {
         display: block; /* 移动端显示汉堡菜单 */
     /* }
-} */ 
+} */
 
 /* 電腦版設計 */
 @media screen and (min-width: 769px) {
@@ -175,7 +175,7 @@ main {
 }
 .database h2{
     color: #004d40; /* 深綠色主色 */
-    border-bottom: 2px solid #004d40; 
+    border-bottom: 2px solid #004d40;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -238,7 +238,7 @@ input[type="radio"] {
 
 /* 體脂率計算結果 */
 #bodyFatOutput {
-    color: #004d40; 
+    color: #004d40;
     /* border-bottom: 2px solid #004d40; */
     padding-bottom: 30px;
     margin-bottom: 20px;
@@ -313,7 +313,7 @@ input[type="radio"] {
     border-radius: 10px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
-/* 選中狀態 */    
+/* 選中狀態 */
 .activity-option input[type="radio"]:checked + span {
     background-color: #004d40;
     color: #ffffff;
@@ -446,7 +446,7 @@ footer{
     right: 200px;
     bottom: 70px;
     display: none;
-    width: 90px;  
+    width: 90px;
     height: 90px;
     background-color: #098245;
     color: white;
@@ -454,14 +454,14 @@ footer{
     text-align: center;
     line-height: 90px;
     text-decoration: none;
-    border-radius: 50%; 
+    border-radius: 50%;
     font-size: 40px;
     z-index: 1000;
 }
 
 #goTop:hover {
     background-color: #089b58;
-} 
+}
 
 
 
@@ -472,7 +472,7 @@ footer{
         width: 90px;
         height: 90px;
     }
-    
+
     #business_card img {
         width: 100%;
     }
@@ -488,7 +488,7 @@ footer{
         line-height: 60px;
         font-size: 30px;
     }
-    
+
     #business_card img {
         width: 90%;   /* 縮小圖片寬度 */
         margin: 0 auto; /* 居中圖片 */
@@ -519,9 +519,9 @@ footer{
     margin: 0 auto;
     padding: auto 0;
     text-align: center;
-    color: var(--accent-color);          
+    color: var(--accent-color);
 }
-    
+
 
 header h1 {
     background-color: #004d40;  /*深綠色主色*/
@@ -551,7 +551,7 @@ header h1 {
 }
 
 /* 電腦版響應式 */
-@media screen and (min-width: 920px){ 
+@media screen and (min-width: 920px){
     .topPage{
         display: flex;
     }
@@ -573,7 +573,7 @@ header h1 {
         color: var(--accent-color);
         margin: 0;
     }
-    
+
     .navbar {
         display: flex;
         align-items: center;
@@ -589,7 +589,7 @@ header h1 {
             }
         }
     }
-    
+
     .navbar .item {
         text-align: center;
         padding: 15px 100px 15px 100px;
@@ -599,8 +599,8 @@ header h1 {
         color: var(--text-color);
         background-color: transparent;
     }
-    
-    
+
+
     .main-container {
         margin: 0 auto; /* 確保居中對齊 */
         padding: 0;     /* 移除內距 */
@@ -615,7 +615,7 @@ header h1 {
         font-size: 2.5em;
         margin: 20px 0 0 0 ;
     }
-    
+
     .container span {
         display: block;
         text-align: center;
@@ -629,8 +629,8 @@ header h1 {
     width: 100%;
     padding-left: 200px;
     animation: fadeIn 1s ease forwards; /* 動畫名稱 時間 函數 保持最後狀態 */
-    } 
-    
+    }
+
     /* 輸出區域 */
    #dataoutput{
         position: absolute;
@@ -642,7 +642,7 @@ header h1 {
 
     .image-section img{
         display: block;
-        width: 100; 
+        width: 100;
         background-color: aqua ;
         padding-left:100px ;
         border-radius: 10%;
@@ -680,6 +680,116 @@ header h1 {
         padding-bottom: 10px;
         margin-bottom: 20px;
     }
-    
 
+
+}
+
+footer p {
+    margin-top:10px;
+}
+
+.qr-code {
+    margin-right: 550px;
+
+}
+
+.qr-code img {
+    max-width: 80px;
+    /* 限制圖片寬度 */
+    height: auto;
+    /* 保持圖片比例 */
+    display: inline-block;
+    /* 確保圖片為行內元素 */
+    vertical-align: middle;
+    /* 保證圖片和文字對齊 */
+    border-radius: 10px;
+    /* 圖片圓角效果 */
+}
+
+.newsletter img {
+    height: auto;
+    /* 保持圖片比例 */
+    display: inline-block;
+    /* 確保圖片為行內元素 */
+    vertical-align: middle;
+    /* 保證圖片和文字對齊 */
+    border-radius: 10px;
+    /* 圖片圓角效果 */
+    align-items: left;
+    position: absolute;
+    left:150px;
+    top: 0px;
+}
+
+.newsletter {
+    background-color: #004d40;
+    color: white;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 水平置中 */
+    position: relative;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+}
+
+.newsletter input,
+.newsletter button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.newsletter input {
+    width: 250px;
+    margin-right: 15px;
+    margin-top:10px;
+}
+
+.newsletter button {
+    width: 80px;
+    cursor: pointer;
+}
+
+.qr-code h5 {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        padding: 20px 10px;
+        flex-direction: column; /* 改變為垂直排列 */
+        align-items: center; /* 置中對齊 */
+        flex-wrap: wrap;
+    }
+
+    .newsletter img {
+        left: 50px;
+        max-width:80px;
+    }
+
+    .newsletter input {
+        width: 90%; /* 輸入框寬度100% 適應螢幕 */
+        max-width: 300px;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .newsletter button {
+        width: 90%; /* 按鈕寬度100% 適應螢幕 */
+        max-width: 300px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 501px) {
+    .newsletter img {
+        display: none;
+    }
 }
