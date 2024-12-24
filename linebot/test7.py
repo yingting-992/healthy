@@ -44,7 +44,7 @@ SENDER_EMAIL = 'zsj9413@gmail.com'
 SENDER_PASSWORD = 'tjfm tcya zfab oejf'
 
 # 6. Azure Blob 儲存體設定
-AZURE_STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=healthy;AccountKey=/KaT8yQ461o3B4TWUDNhRingFu28EO70b53PWHzMeiQ5js9MFgDTBNW+7xER5vm3sQDe+R9j5hyR+AStS50GLQ==;EndpointSuffix=core.windows.net"
+AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 BLOB_CONTAINER_NAME = "hhh"
 
 # 建立 BlobServiceClient 與 ContainerClient
