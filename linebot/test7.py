@@ -12,12 +12,12 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # LINE Bot 設定
-LINE_CHANNEL_ACCESS_TOKEN = "SyEZaXoxa5KTe1lJXRq7EaVG7ANeoTav0hVEYwGVMQU/OoohwFIIsvPwpj8hG4G3zsN4ZrLfspKVGmFQMOpOd0KvIyoQPQ2waJCYus/GEpWi6Btau6TLxt/an1UfeiuqDcAv4/HKTd7hIrOzbEjNLwdB04t89/1O/w1cDnyilFU="
-LINE_CHANNEL_SECRET = "f080443160cd17dca0a74f5e649323ed"
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(LINE_CHANNEL_SECRET)
+line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
+handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # Azure Custom Vision 設定
 AZURE_CUSTOM_VISION_URL = "https://food70-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1a75e191-f35b-4657-879c-ef0b8d0a68d9/classify/iterations/Iteration2/image"
@@ -33,7 +33,7 @@ SENDER_PASSWORD = 'ofct baco nehg jkkv'
 feedback_dict = {}
 
 # 載入外部 JSON 文件
-def load_calorie_info(json_path=r"C:\Users\USER\tmp\healthy\linebot\calorie_info.json"):
+def load_calorie_info(json_path="./linebot/calorie_info.json"):
     with open(json_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -56,7 +56,23 @@ def send_email(feedback):
     except Exception as e:
         print(f"發送郵件失敗: {e}")
 
-# 爬取網頁內容並生成 Flex Message
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 爬取網頁內容並生成 Flex Message
 def fetch_web_content(section_type):
     url = "https://yingting-992.github.io/healthy/reptile/grab.html"  # 網頁的目標連結
@@ -208,6 +224,23 @@ def handle_message(event):
     # 回覆用戶未識別的訊息
     reply_text = TextSendMessage(text="抱歉，我無法識別您的訊息，請選擇功能選單再試一次！")
     line_bot_api.reply_message(event.reply_token, reply_text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 圖片分析功能
 def analyze_image_with_custom_vision(image_path):
