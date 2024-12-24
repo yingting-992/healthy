@@ -30,7 +30,7 @@ SENDER_PASSWORD = 'ofct baco nehg jkkv'
 feedback_dict = {}
 
 # 載入外部 JSON 文件
-def load_calorie_info(json_path=r"C:\Users\USER\Desktop\高科資料\程式設計報告\linebot\calorie_info.json"):
+def load_calorie_info(json_path=r"C:\Users\USER\tmp\healthy\linebot\calorie_info.json"):
     with open(json_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
