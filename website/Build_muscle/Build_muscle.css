@@ -394,7 +394,7 @@ footer p {
     }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 500px) {
     .newsletter img {
         display: none;
     }
