@@ -13,10 +13,8 @@ import json
 import os
 
 # LINE Bot 設定
-LINE_CHANNEL_ACCESS_TOKEN = "SyEZaXoxa5KTe1lJXRq7EaVG7ANeoTav0hVEYwGVMQU/OoohwFIIsvPwpj8hG4G3zsN4ZrLfspKVGmFQMOpOd0KvIyoQPQ2waJCYus/GEpWi6Btau6TLxt/an1UfeiuqDcAv4/HKTd7hIrOzbEjNLwdB04t89/1O/w1cDnyilFU="
-LINE_CHANNEL_SECRET = "f080443160cd17dca0a74f5e649323ed"
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(LINE_CHANNEL_SECRET)
+line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
+handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # Azure Custom Vision 設定
 AZURE_CUSTOM_VISION_URL = "https://hhhtt-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/09df699c-0bac-4052-b505-e158b7e42092/classify/iterations/Iteration2/image"
@@ -32,7 +30,7 @@ SENDER_PASSWORD = 'ofct baco nehg jkkv'
 feedback_dict = {}
 
 # 載入外部 JSON 文件
-def load_calorie_info(json_path=r"C:\Users\USER\Desktop\高科資料\程式設計報告\linebot\calorie_info.json"):
+def load_calorie_info(json_path=r"C:\Users\USER\tmp\healthy\linebot\calorie_info.json"):
     with open(json_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
