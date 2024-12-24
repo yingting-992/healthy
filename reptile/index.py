@@ -60,7 +60,7 @@ def send_email(feedback):
 
 # 爬取網頁內容並生成 Flex Message
 def fetch_web_content(section_type):
-    url = "https://yingting-992.github.io/data/dd.html"
+    url = "https://yingting-992.github.io/healthy/reptile/grab.html"
     response = requests.get(url)
 
     app.logger.info(f"Fetched URL: {url} with status {response.status_code}")
