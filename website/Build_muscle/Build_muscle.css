@@ -17,7 +17,7 @@
     }
 }
 
-.container h1, main h2, #business_cards { 
+.container h1, main h2, #business_cards {
     animation: fadeIn 1s ease forwards; /* 動畫名稱 時間 函數 保持最後狀態 */
 }
 
@@ -82,14 +82,14 @@ img {
     max-width: 100%; /* 最大寬度為100% */
     height: auto;
 }
-        
+
 header {
     background-color: #004d40; /* 深綠色主色 */
     padding: 20px 0;
     text-align: center;
-    color: #ffffff;          
+    color: #ffffff;
 }
-        
+
 header h1 {
     margin: 0;
     font-size: 2.5em;
@@ -216,7 +216,7 @@ footer p {
     right: 200px;
     bottom: 70px;
     display: none;
-    width: 90px;  
+    width: 90px;
     height: 90px;
     background-color: #098245;
     color: white;
@@ -224,14 +224,14 @@ footer p {
     text-align: center;
     line-height: 90px;
     text-decoration: none;
-    border-radius: 50%; 
+    border-radius: 50%;
     font-size: 40px;
     z-index: 1000;
 }
 
 #goTop:hover {
     background-color: #089b58;
-} 
+}
 
 
 
@@ -242,7 +242,7 @@ footer p {
         width: 90px;
         height: 90px;
     }
-    
+
     #business_card img {
         width: 100%;
     }
@@ -258,7 +258,7 @@ footer p {
         line-height: 60px;
         font-size: 30px;
     }
-    
+
     #business_card img {
         width: 90%;   /* 縮小圖片寬度 */
         margin: 0 auto; /* 居中圖片 */
@@ -288,4 +288,114 @@ footer p {
 .tooltip h4 {
     font-weight: bold; /* 標題加粗 */
     margin: 0 0 5px; /* 標題下方的間距 */
+}
+
+footer p {
+    margin-top:10px;
+}
+
+.qr-code {
+    margin-right: 550px;
+
+}
+
+.qr-code img {
+    max-width: 80px;
+    /* 限制圖片寬度 */
+    height: auto;
+    /* 保持圖片比例 */
+    display: inline-block;
+    /* 確保圖片為行內元素 */
+    vertical-align: middle;
+    /* 保證圖片和文字對齊 */
+    border-radius: 10px;
+    /* 圖片圓角效果 */
+}
+
+.newsletter img {
+    height: auto;
+    /* 保持圖片比例 */
+    display: inline-block;
+    /* 確保圖片為行內元素 */
+    vertical-align: middle;
+    /* 保證圖片和文字對齊 */
+    border-radius: 10px;
+    /* 圖片圓角效果 */
+    align-items: left;
+    position: absolute;
+    left:150px;
+    top: 0px;
+}
+
+.newsletter {
+    background-color: #004d40;
+    color: white;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 水平置中 */
+    position: relative;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+}
+
+.newsletter input,
+.newsletter button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.newsletter input {
+    width: 250px;
+    margin-right: 15px;
+    margin-top:10px;
+}
+
+.newsletter button {
+    width: 80px;
+    cursor: pointer;
+}
+
+.qr-code h5 {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        padding: 20px 10px;
+        flex-direction: column; /* 改變為垂直排列 */
+        align-items: center; /* 置中對齊 */
+        flex-wrap: wrap;
+    }
+
+    .newsletter img {
+        left: 50px;
+        max-width:80px;
+    }
+
+    .newsletter input {
+        width: 90%; /* 輸入框寬度100% 適應螢幕 */
+        max-width: 300px;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .newsletter button {
+        width: 90%; /* 按鈕寬度100% 適應螢幕 */
+        max-width: 300px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 426px) {
+    .newsletter img {
+        display: none;
+    }
 }
