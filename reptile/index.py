@@ -22,8 +22,8 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # Azure Custom Vision 設定
-AZURE_CUSTOM_VISION_URL = "https://food70-prediction.cognitiveservices.azure.com//customvision/v3.0/Prediction/09df699c-0bac-4052-b505-e158b7e42092/classify/iterations/Iteration2/image"
-AZURE_CUSTOM_VISION_KEY = "1jjtSqH15ozMQOuEWog20PwSROXE6OBaCuaFHsgLv9i7onQRGh5kJQQJ99ALACYeBjFXJ3w3AAAJACOGVs56"
+AZURE_CUSTOM_VISION_URL = "https://zsj1015-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/fda8fc52-56b2-4570-bbb1-d7b9d095a427/classify/iterations/Iteration1/image"
+AZURE_CUSTOM_VISION_KEY = "2NOMyxeagWFdsetTELQTwk5DRblELNOfcA8fmGAoD8sZczzpbExBJQQJ99ALACYeBjFXJ3w3AAAJACOGTg4J"
 
 # SMTP 配置
 SMTP_SERVER = 'smtp.gmail.com'
