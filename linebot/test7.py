@@ -34,9 +34,8 @@ line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 # 4. Azure Custom Vision 設定
-AZURE_CUSTOM_VISION_URL = "https://food70-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/1a75e191-f35b-4657-879c-ef0b8d0a68d9/classify/iterations/Iteration2/image"
-AZURE_CUSTOM_VISION_KEY = "8pMOLkNndA3qrDFy6Yjn0ZkgWBjoErhz3ruqhiVhT3zRFOXbXh71JQQJ99ALACYeBjFXJ3w3AAAIACOG5bXr"
-
+AZURE_CUSTOM_VISION_URL = "https://zsj1015-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/fda8fc52-56b2-4570-bbb1-d7b9d095a427/classify/iterations/Iteration1/image"
+AZURE_CUSTOM_VISION_KEY = "FSl6JfLy2ZlAiJaKdvQOEn0uvRY1o0WSDBLNmlMMjGC4cSjpk1whJQQJ99AKACYeBjFXJ3w3AAAIACOGOIee"
 # 5. SMTP（郵件）配置
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
