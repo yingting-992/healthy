@@ -72,7 +72,7 @@ img{
     font-size: 18px;  /* 字体大小适中 */
     color: #fff;  /* 白色文字，适合与深色背景对比 */
     background: rgba(0, 0, 0, 0.6);  /* 背景透明黑色，让文字更突出 */
-    border-radius: 8px;  /* 增加圆角 */
+    border-radius: 0.8px,0.8px;  /* 增加圆角 */
     transition: transform 0.3s ease, background 0.3s ease;  /* 平滑的过渡效果 */
     letter-spacing: 1px;  /* 适当增加字母间距，提升可读性 */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);  /* 增加阴影效果 */
