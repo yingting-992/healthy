@@ -20,6 +20,8 @@ img{
     height: 100vh;
     background: url(../圖片/主頁背景.jpg) no-repeat center top/cover;
     padding-top: 50px;
+    overflow: hidden;
+    box-sizing: border-box; 
 }
 
 .topPage header h1 img{
@@ -108,7 +110,7 @@ img{
 }
 
 .card:hover {
-    flex: 1.5;
+    flex: 1.2;
 }
 
 /* 大於920px的設備（桌面設備） */
